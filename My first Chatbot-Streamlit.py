@@ -46,8 +46,10 @@ def ask_question(csv_data, question):
         "temperature": 0,
         "max_tokens": 1550
     })
+    # Retrieve API key from secrets
+    api_key = st.secrets["api_keys"]["openai_api_key"]
     headers = {
-        'x-api-key': 'fb2a2161-2e29-4a74-a3a2-3a3e270f7cfe1bbf4038-e134-48d4-80f9-6ba532bccd53',
+        'x-api-key': api_key,
         'Content-Type': 'application/json'
     }
     response = requests.request("POST", url, headers=headers, data=payload)
