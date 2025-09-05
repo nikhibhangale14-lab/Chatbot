@@ -12,7 +12,8 @@ from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain_community.chat_models import ChatOpenAI
-from langchain.chains import SummarizationChain
+from langchain.chains import SummarizationChainimport langchain
+print(langchain.__version__)
 
 
 # Read LenAI credentials from Streamlit secrets
