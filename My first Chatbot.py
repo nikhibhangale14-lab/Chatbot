@@ -5,8 +5,6 @@
 
 
 import os
-get_ipython().system('pip install streamlit')
-get_ipython().system('pip install PyPDF2')
 import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -63,7 +61,7 @@ if file is not None:
     llm = ChatOpenAI(
         temperature=0,
         max_tokens=1000,
-        model_name="gpt-3.5-turbo"  # Replace if LenAI model name differs
+        model_name="GPT 4.1 Nano"  # Replace if LenAI model name differs
     )
     
     summarization_chain = SummarizationChain(llm=llm)
