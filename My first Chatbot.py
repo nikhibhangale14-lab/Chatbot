@@ -12,7 +12,7 @@ from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain_community.chat_models import ChatOpenAI
-from langchain.chains import load_summarization_chain
+from langchain.chains import SummarizationChain
 
 
 # Read LenAI credentials from Streamlit secrets
@@ -65,7 +65,8 @@ if file is not None:
         model_name="GPT 4.1 Nano"  # Replace if LenAI model name differs
     )
     
-    summarization_chain = load_summarization_chain(llm, chain_type="stuff")
+    summarization_chain = SummarizationChain(llm=llm)
+
     summary = summarization_chain.run(input_documents=chunks)
     
     st.subheader("Document Summary")
